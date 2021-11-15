@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import *
 
-
 class Seite1():
     def __init__(self, fenster, container):
         self.s1_rahmen = tk.Frame(fenster)
@@ -9,7 +8,7 @@ class Seite1():
         label.pack(side='top', fill='both', expand='True')
         self.s1_rahmen.place(in_=container, x=0, y=0, relwidth=1, relheight=1)
 
-        feld = tk.Canvas(self.s1_rahmen, width=400, height=400)
+        feld = tk.Canvas(self.s1_rahmen, width=1000, height=1000)
 
         feld.pack(fill="both", expand=True)
 
@@ -33,14 +32,6 @@ def haupt_ansicht(fenster):
     buttonframe.pack(side="top", fill="x", expand=False)
     container.pack(side="top", fill="both", expand=True)
 
-    feld = tk.Canvas(container, width=400, height=400)
-
-    feld.pack(fill="both", expand=True)
-
-    purple_dreieck = feld.create_polygon(0,0,0,1000,1000,1000, fill='darkorchid1')
-    royal_dreieck = feld.create_polygon(1000,1000,1000,0,0,0, fill='royalblue1')
-
-
     s1 = Seite1(fenster, container)
     s2 = Seite2(fenster, container)
 
@@ -51,7 +42,6 @@ def haupt_ansicht(fenster):
     b2.pack(side="left")
 
     s1.show()
-
 
 fenster = tk.Tk()
 
@@ -75,6 +65,3 @@ haupt_ansicht(fenster)
 
 
 fenster.mainloop()
-
-
-
